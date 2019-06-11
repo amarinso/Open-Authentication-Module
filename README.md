@@ -102,18 +102,28 @@ Using a corporate Google account, users can be setup so that the login process w
 
 
 ## Installation & Configuration
+Tested with Mendix 7.23.5
 
-1. Download the zip file from Github
-2. Extract the zip
+1. Download the OauthModule_v1.3.mpk file from Github releases
+(https://github.com/Erwin-t-Hoen/Open-Authentication-Module/releases)
+2. Download and extract the "Source Code" zip
 3. Import the module (.mpk) into you application as a new module
-4. From the theme directory copy all the files to your theme directory
+4. From the theme directory (on the uncompressed directory) copy all the files to your theme directory
+(there will be some overwrites)
 5. Connect the page and microflow from the #Implementation folder to your navigation Assign the permissions to the userrole(s)
-6. Import the Community Commons module from the app store if not already part of your project
-7. Import the Model Reflection module from the app store  if not already part of your project
+- This means, assign one of your application user roles to the "User" role defined in the OAuthModule
+- Also create navigation Item and assign #Implementation>NI_GetOrCreateOAuthConfig Microflow
+6. Import the "Community Commons Function Library" module from the app store if not already part of your project
+(it asks to override some files)
+-> Also import the "NavigationLayout module" on the app store, as it contains required layouts
+(it overrides some existing files)
+7. Import the "Mx Model Reflection" module from the app store  if not already part of your project
 8. Set the microflow AS_StartOAuthRequestHandlers as After Startup Microflow
 9. Add the attribute Email to the Administration.Account entity and pages
+(not required, already exists this attribute)
 10. Register your app with the OAuth provider, make sure that the callback URL is https://(yourapp)/callback/(OAuth_provider)
 For Google e.g. http://myfirstapp.mendixcloud.com/callback/google
+For Google: https://developers.google.com/identity/sign-in/web/sign-in#before_you_begin starts the assistant
 11. Update the constants ClientId_(OAuth provider) and ClientSecret_(OAuth provider)
 12. The next setup step for your OAuth module is:  navigate to https://(yourapp)/admin.html and login with your Admin account
 13. Synchronize your Model Reflection module and make sure that the data for the OAuthModule is created
