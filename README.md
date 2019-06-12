@@ -104,7 +104,9 @@ Using a corporate Google account, users can be setup so that the login process w
 ## Installation & Configuration
 Tested with Mendix 7.23.5
 
-1. Download the OauthModule_v1.3.mpk file from Github releases
+<ol>
+    <li>1. Download the OauthModule_v1.3.mpk file from Github releases</li>
+    </ol>
 (https://github.com/Erwin-t-Hoen/Open-Authentication-Module/releases)
 2. Download and extract the "Source Code" zip
 3. Import the module (.mpk) into you application as a new module
