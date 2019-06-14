@@ -116,6 +116,7 @@ Tested with Mendix 7.23.5
 <ul>
 <li> This means, assign one of your application user roles to the "User" role defined in the OAuthModule</li>
 <li> Also create navigation Item and assign #Implementation>NI_GetOrCreateOAuthConfig Microflow</li>
+</ul>
 </li>
 <li><p>Import the "Community Commons Function Library" module from the app store if not already part of your project</p>
 <p> (it asks to override some files)</p>
