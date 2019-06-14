@@ -107,7 +107,6 @@ Tested with Mendix 7.23.5
 
 <ol>
     <li>1. Download the OauthModule_v1.3.mpk file from Github releases</li>
-    </ol>
 (https://github.com/Erwin-t-Hoen/Open-Authentication-Module/releases)
 <li>Download and extract the "Source Code" zip</li>
 <li>Import the module (.mpk) into you application as a new module</li>
@@ -144,6 +143,7 @@ Tested with Mendix 7.23.5
 <li>Wait, what if security requirements are more strict? Perform step 17</li>
 <li>Delete the admin.html from your theme folder to make sure that OAuth is the only login option, and redeploy your app</li>
 <li>Done!</li>
+    </ol>
 
 If you want to use another OAuth provider than those that come with the module read the Add_OAuth_Provider_v1.2.pdf file on github.
 To implement your own resolve user logic either adapt the microflow ResolveUserByEmail or create your own microflow and link this in the OAuth config.
