@@ -1,3 +1,4 @@
+
 ## Open Authentication Module
 <table>
 <tr> 
@@ -108,36 +109,41 @@ Tested with Mendix 7.23.5
     <li>1. Download the OauthModule_v1.3.mpk file from Github releases</li>
     </ol>
 (https://github.com/Erwin-t-Hoen/Open-Authentication-Module/releases)
-2. Download and extract the "Source Code" zip
-3. Import the module (.mpk) into you application as a new module
-4. From the theme directory (on the uncompressed directory) copy all the files to your theme directory
+<li>Download and extract the "Source Code" zip</li>
+<li>Import the module (.mpk) into you application as a new module</li>
+<li>From the theme directory (on the uncompressed directory) copy all the files to your theme directory</li>
 (there will be some overwrites)
-5. Connect the page and microflow from the #Implementation folder to your navigation Assign the permissions to the userrole(s)
-- This means, assign one of your application user roles to the "User" role defined in the OAuthModule
-- Also create navigation Item and assign #Implementation>NI_GetOrCreateOAuthConfig Microflow
-6. Import the "Community Commons Function Library" module from the app store if not already part of your project
-(it asks to override some files)
--> Also import the "NavigationLayout module" on the app store, as it contains required layouts
-(it overrides some existing files)
-7. Import the "Mx Model Reflection" module from the app store  if not already part of your project
-8. Set the microflow AS_StartOAuthRequestHandlers as After Startup Microflow
-9. Add the attribute Email to the Administration.Account entity and pages
-(not required, already exists this attribute)
-10. Register your app with the OAuth provider, make sure that the callback URL is https://(yourapp)/callback/(OAuth_provider)
-For Google e.g. http://myfirstapp.mendixcloud.com/callback/google
-For Google: https://developers.google.com/identity/sign-in/web/sign-in#before_you_begin starts the assistant
-11. Update the constants ClientId_(OAuth provider) and ClientSecret_(OAuth provider)
-12. The next setup step for your OAuth module is:  navigate to https://(yourapp)/admin.html and login with your Admin account
-13. Synchronize your Model Reflection module and make sure that the data for the OAuthModule is created
-14. Select the OAuth Config menu item and select the microflow ResolveUserByEmail
-15. To allow your user to return to a logout page, implement the sign out button as found in the #implementation Oauth_Layout
-16. Don't forget to set your requesthandlers in the cloud ('signin/','callback/' and 'logout/')
-17. And you're done!
+<li><p>Connect the page and microflow from the #Implementation folder to your navigation Assign the permissions to the userrole(s)</p>
+<ul>
+<li> This means, assign one of your application user roles to the "User" role defined in the OAuthModule</li>
+<li> Also create navigation Item and assign #Implementation>NI_GetOrCreateOAuthConfig Microflow</li>
+</li>
+<li><p>Import the "Community Commons Function Library" module from the app store if not already part of your project</p>
+<p> (it asks to override some files)</p>
+<p>-> Also import the "NavigationLayout module" on the app store, as it contains required layouts</p>
+<p>(it overrides some existing files)</p>
+</li>
+<li>Import the "Mx Model Reflection" module from the app store  if not already part of your project</li>
+<li>Set the microflow AS_StartOAuthRequestHandlers as After Startup Microflow</li>
+<li><p>Add the attribute Email to the Administration.Account entity and pages</p>
+<p>(not required, already exists this attribute)</p>
+</li>
+<li><p>Register your app with the OAuth provider, make sure that the callback URL is https://(yourapp)/callback/(OAuth_provider)</p>
+<p>For Google e.g. http://myfirstapp.mendixcloud.com/callback/google</p>
+<p>For Google: https://developers.google.com/identity/sign-in/web/sign-in#before_you_begin starts the assistant</p>
+</li>
+<li>Update the constants ClientId_(OAuth provider) and ClientSecret_(OAuth provider)</li>
+<li>The next setup step for your OAuth module is:  navigate to https://(yourapp)/admin.html and login with your Admin account</li>
+<li>Synchronize your Model Reflection module and make sure that the data for the OAuthModule is created</li>
+<li>Select the OAuth Config menu item and select the microflow ResolveUserByEmail</li>
+<li>To allow your user to return to a logout page, implement the sign out button as found in the #implementation Oauth_Layout</li>
+<li>Don't forget to set your requesthandlers in the cloud ('signin/','callback/' and 'logout/')</li>
+<li>And you're done!</li>
  
 
-18. Wait, what if security requirements are more strict? Perform step 17
-19. Delete the admin.html from your theme folder to make sure that OAuth is the only login option, and redeploy your app
-20. Done!
+<li>Wait, what if security requirements are more strict? Perform step 17</li>
+<li>Delete the admin.html from your theme folder to make sure that OAuth is the only login option, and redeploy your app</li>
+<li>Done!</li>
 
 If you want to use another OAuth provider than those that come with the module read the Add_OAuth_Provider_v1.2.pdf file on github.
 To implement your own resolve user logic either adapt the microflow ResolveUserByEmail or create your own microflow and link this in the OAuth config.
